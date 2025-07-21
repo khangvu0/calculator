@@ -4,7 +4,7 @@
 /*-------------------- Color Variables --------------------*/
 :root {
     --hue-color: 230; 
-    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --main-color: hsl(var(--hue-color), 69%, 61%);
     --title-color: hsl(var(--hue-color), 8%, 15%);
     --text-color: hsl(var(--hue-color), 8%, 45%);
     --body-color: hsl(var(--hue-color), 60%, 99%);
@@ -12,24 +12,24 @@
 
 /*-------------------- Base CSS Rules --------------------*/
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-size: 1rem;
-  background-color: var(--body-color);
-  color: var(--text-color);
+    font-size: 1rem;
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /*-------------------- Header --------------------*/
@@ -56,7 +56,7 @@ a {
 }
 
 .nav_logo:hover {
-    color: var(--first-color);
+    color: var(--main-color);
 }
 
 .nav_list {
@@ -71,14 +71,73 @@ a {
 }
 
 .nav_link:hover {
-    color: var(--first-color);
+    color: var(--main-color);
 }
 
 /*-------------------- Main --------------------*/
+.calculator-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.calculator {
+    min-width: 300px;
+    width: 75vw;
+    max-width: 400px;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.display {
+    height: 3rem;
+    background-color: whitesmoke;
+    color: var(--title-color);
+    font-size: 2rem;
+    text-align: right;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.btn {
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--main-color);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn[data-action="equals"] {
+    background-color: hsl(var(--hue-color), 69%, 40%);
+}
+
+.btn[data-number="0"] {
+    grid-column: span 2;
+}
+
+.btn:hover {
+    background-color: hsl(var(--hue-color), 69%, 50%);
+}
 
 /*-------------------- Footer --------------------*/
 .footer {
-    padding-top: 2rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer_container {
@@ -86,7 +145,7 @@ a {
 }
 
 .footer_bg {
-    background-color: var(--first-color);
+    background-color: var(--main-color);
     padding: 2rem 0;
 }
 
@@ -105,12 +164,25 @@ a {
 /*-------------------- Media Queries --------------------*/
 /* For tablet */
 @media screen and (min-width: 768px){
-    .footer_bg {
-        padding: 3rem 0;
+    .nav_logo {
+        font-size: 1.5rem;
+    }
+    .nav_link {
+        font-size: 1rem;
+    }
+
+    .calculator-section {
+        margin-top: 6rem;
+    }
+
+    .btn {
+        font-size: 1.35rem;
     }
 }
 
 /* For large devices */
 @media screen and (min-width: 1024px){
-
+    .btn {
+        font-size: 1.5rem;
+    }
 }
