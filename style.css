@@ -110,7 +110,13 @@ a {
     gap: 0.5rem;
 }
 
-.btn {
+.num,
+.operand,
+#clear,
+#delete,
+#percent,
+#dot,
+#equal {
     font-size: 1.2rem;
     color: white;
     background-color: var(--main-color);
@@ -121,15 +127,21 @@ a {
     transition: background-color 0.2s ease;
 }
 
-.btn[data-action="equals"] {
+#equal {
     background-color: hsl(var(--hue-color), 69%, 40%);
 }
 
-.btn[data-number="0"] {
+#zero {
     grid-column: span 2;
 }
 
-.btn:hover {
+.num:hover,
+.operand:hover,
+#clear:hover,
+#delete:hover,
+#percent:hover,
+#dot:hover,
+#equal:hover {
     background-color: hsl(var(--hue-color), 69%, 50%);
 }
 
