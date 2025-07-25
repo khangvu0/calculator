@@ -187,14 +187,26 @@ a {
         margin-top: 6rem;
     }
 
-    .btn {
+    .num,
+    .operand,
+    #clear,
+    #backspace,
+    #percent,
+    #dot,
+    #equal {
         font-size: 1.35rem;
     }
 }
 
 /* For large devices */
 @media screen and (min-width: 1024px){
-    .btn {
+    .num,
+    .operand,
+    #clear,
+    #backspace,
+    #percent,
+    #dot,
+    #equal {
         font-size: 1.5rem;
     }
 }
