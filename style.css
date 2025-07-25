@@ -113,7 +113,7 @@ a {
 .num,
 .operand,
 #clear,
-#delete,
+#backspace,
 #percent,
 #dot,
 #equal {
@@ -138,7 +138,7 @@ a {
 .num:hover,
 .operand:hover,
 #clear:hover,
-#delete:hover,
+#backspace:hover,
 #percent:hover,
 #dot:hover,
 #equal:hover {
