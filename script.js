@@ -35,11 +35,13 @@ const calculator = {
     },
 
     backspace() {
-        
+
     },
 
     clear(){
-
+        this.displayValue = '0';
+        this.oldValue = '';
+        this.updateDisplay();
     },
 
     percent() {
@@ -67,8 +69,8 @@ operand.forEach(btn =>
 );
 
 // Click event for other buttons
-clear.addEventListener('click', calculator.clear);
-backspace.addEventListener('click', calculator.backspace);
+clear.addEventListener('click', () => calculator.clear());
+backspace.addEventListener('click', () => calculator.backspace);
 dot.addEventListener('click', () => calculator.append('.'));
-equal.addEventListener('click', calculator.calculate);
-percent.addEventListener('click', calculator.makePercent);
+equal.addEventListener('click', () => calculator.calculate);
+percent.addEventListener('click', () => calculator.makePercent);
