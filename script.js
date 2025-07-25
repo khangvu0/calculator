@@ -9,14 +9,24 @@ const dot = document.getElementById('dot');
 const equal = document.getElementById('equal');
 const display = document.getElementById('display')
 
+const operators = ['+', '-', '×', '÷'];
+
 const calculator = {
     displayValue: '0',
     oldValue: '',
 
     append(char) {
-        // Checks for 2 periods in the display
+        const lastChar = this.displayValue.slice(-1);
+
+        // Checks for 2 decimals in the display
         if (char === '.' && this.displayValue.includes('.')) {
-            alert('Can not have 2 decimals.');
+            alert('Cannot have 2 decimals.');
+            return;
+        }
+
+        // Checks for 2 operands in a row
+        if (operators.includes(char) && operators.includes(lastChar)) {
+            alert('Cannot have 2 operators in a row.')
             return;
         }
 
