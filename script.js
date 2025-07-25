@@ -50,7 +50,13 @@ const calculator = {
     },
 
     percent() {
+        let tempVal = parseFloat(this.displayValue);
 
+        if (!isNaN(tempVal)) {
+            tempVal /= 100;
+            this.displayValue = tempVal.toString();
+            this.updateDisplay();
+        }
     },
 
     compute() {
@@ -77,5 +83,5 @@ operand.forEach(btn =>
 clear.addEventListener('click', () => calculator.clear());
 backspace.addEventListener('click', () => calculator.backspace());
 dot.addEventListener('click', () => calculator.append('.'));
-equal.addEventListener('click', () => calculator.calculate);
-percent.addEventListener('click', () => calculator.makePercent);
+equal.addEventListener('click', () => calculator.compute());
+percent.addEventListener('click', () => calculator.percent());
