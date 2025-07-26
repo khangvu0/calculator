@@ -8,6 +8,8 @@ const percent = document.getElementById('percent');
 const dot = document.getElementById('dot');
 const equal = document.getElementById('equal');
 const display = document.getElementById('display')
+const historyLog = document.getElementById('history-log');
+const clearHistory = document.getElementById('clear-history');
 
 const operators = ['+', '-', '×', '÷'];
 
@@ -78,6 +80,8 @@ const calculator = {
     compute() {
         let numArray = this.displayValue.split(/[+\-×÷]/).map(parseFloat);
         let operandArray = this.displayValue.match(/[+\-×÷]/g) || [];
+        const originalExpression = this.displayValue;
+        let finalResult;
         
         // First pass: handle × and ÷
         for (let i = 0; i < operandArray.length; i++) {
@@ -122,8 +126,14 @@ const calculator = {
             }
         }
 
-        this.displayValue = numArray[0].toString();
+        finalResult = numArray[0].toString();
+        this.displayValue = finalResult;
         this.updateDisplay();
+
+        // Append history log
+        const historyEntry = document.createElement('p');
+        historyEntry.textContent = `${originalExpression} = ${finalResult}`;
+        historyLog.appendChild(historyEntry);
     }
 };
 
@@ -141,6 +151,14 @@ operand.forEach(btn =>
         calculator.append(btn.textContent);
     })
 );
+
+clearHistory.addEventListener('click', () => {
+    [...historyLog.children].forEach(child => {     // Spread operator
+        if (child.tagName === 'P') {
+            child.remove();
+        }
+    });
+});
 
 // Click event for other buttons
 clear.addEventListener('click', () => calculator.clear());
