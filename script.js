@@ -145,13 +145,13 @@ num.forEach(btn =>
 );
 
 // Click event for each operand button
-//foreach is a shorthand for a forloop
 operand.forEach(btn =>
     btn.addEventListener('click', () => {
         calculator.append(btn.textContent);
     })
 );
 
+// Click event to clear history
 clearHistory.addEventListener('click', () => {
     [...historyLog.children].forEach(child => {     // Spread operator
         if (child.tagName === 'P') {

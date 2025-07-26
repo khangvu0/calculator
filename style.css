@@ -167,13 +167,13 @@ a {
 }
 
 .history {
-  background-color: var(--body-color);
-  color: var(--text-color);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow-y: auto;
-  max-height: 9rem;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    max-height: 9rem;
 }
 
 .history-header {
@@ -183,11 +183,11 @@ a {
 }
 
 .history h3 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .history p {
-  margin: 0.25rem 0;
+    margin: 0.25rem 0;
 }
 
 #clear-history {
