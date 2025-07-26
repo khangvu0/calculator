@@ -31,12 +31,12 @@ I wanted to challenge myself to leverage JavaScript objects for this project. As
 
 - Updating the DOM dynamically based on user interaction.
 - Preventing input errors and handling edge cases like division by zero.
-- Handling content overflow cleanly with overflow-y: auto.
+- Handling content overflow cleanly with __overflow-y: auto__.
 - You can directly paste symbols like ⌫ (backspace) into HTML without needing Unicode references.
-- Learned how to use parseFloat() to safely convert strings to numbers for arithmetic.
-- Leveraged .slice() to implement backspace functionality cleanly.
-- Arrow functions and this context:
-When calling object methods via event listeners, wrapping them in arrow functions ensures this still refers to the object:
+- Learned how to use __parseFloat()__ to safely convert strings to numbers for arithmetic.
+- Leveraged __.slice()__ to implement backspace functionality cleanly.
+- Arrow functions and __this__ context:
+When calling object methods via event listeners, wrapping them in arrow functions ensures __this__ still refers to the object:
 
 ## Screenshot
 
