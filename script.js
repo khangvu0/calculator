@@ -14,6 +14,7 @@ const operators = ['+', '-', '×', '÷'];
 const calculator = {
     displayValue: '0',
     oldValue: '',
+    operator: '',
 
     append(char) {
         const lastChar = this.displayValue.slice(-1);
@@ -21,6 +22,11 @@ const calculator = {
         // Checks for 2 decimals in the display
         if (char === '.' && this.displayValue.includes('.')) {
             alert('Cannot have 2 decimals.');
+            return;
+        }
+
+        if (this.displayValue === '0' && operators.includes(char)) {
+            alert('Cannot start with an operator.');
             return;
         }
 
@@ -70,7 +76,54 @@ const calculator = {
     },
 
     compute() {
+        let numArray = this.displayValue.split(/[+\-×÷]/).map(parseFloat);
+        let operandArray = this.displayValue.match(/[+\-×÷]/g) || [];
+        
+        // First pass: handle × and ÷
+        for (let i = 0; i < operandArray.length; i++) {
+            if (operandArray[i] === '×' || operandArray[i] === '÷') {
+                const a = numArray[i];
+                const b = numArray[i + 1];
+                let result;
 
+                if (operandArray[i] === '×') {
+                    result = a * b;
+                } else {
+                    if (b === 0) {
+                        alert("Error: Division by zero.");
+                        this.clear();
+                        return;
+                    }
+                    result = a / b;
+                }
+
+                numArray.splice(i, 2, result);  // Replace a and b with the result
+                operandArray.splice(i, 1);      // Remove operator that was just handled
+                i--; // Adjust index to stay in place
+            }
+        }
+
+        // Second pass: handle + and -
+        for (let i = 0; i < operandArray.length; i++) {
+            if (operandArray[i] === '+' || operandArray[i] === '-') {
+                const c = numArray[i];
+                const d = numArray[i + 1];
+                let result;
+
+                if (operandArray[i] === '+') {
+                    result = c + d;
+                } else {
+                    result = c - d;
+                }
+
+                numArray.splice(i, 2, result);
+                operandArray.splice(i, 1);
+                i--; 
+            }
+        }
+
+        this.displayValue = numArray[0].toString();
+        this.updateDisplay();
     }
 };
 
