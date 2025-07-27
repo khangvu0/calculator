@@ -1,4 +1,4 @@
-# Rock Paper Scissors
+# Calculator
 
 This is a repository for my take on the classic game Rock, Paper, Scissors. The timeline of this assignment spanned four days and served as a learning opportunity to deepen my understanding of JavaScript objects and DOM manipulation.
 
