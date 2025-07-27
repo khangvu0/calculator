@@ -1,6 +1,6 @@
 # Calculator
 
-This is a repository for my take on the classic game Rock, Paper, Scissors. The timeline of this assignment spanned four days and served as a learning opportunity to deepen my understanding of JavaScript objects and DOM manipulation.
+This is a repository for my custom-built Calculator web application. Designed with both functionality and aesthetics in mind, this project allowed me to strengthen my understanding of JavaScript objects, DOM manipulation, and responsive layout techniques.
 
 ## Live Demo
 
