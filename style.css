@@ -4,7 +4,7 @@
 /*-------------------- Color Variables --------------------*/
 :root {
     --hue-color: 230; 
-    --main-color: hsl(var(--hue-color), 69%, 61%);
+    --main-color: hsl(var(--hue-color), 71%, 61%);
     --title-color: hsl(var(--hue-color), 8%, 15%);
     --text-color: hsl(var(--hue-color), 8%, 45%);
     --body-color: hsl(var(--hue-color), 60%, 99%);
